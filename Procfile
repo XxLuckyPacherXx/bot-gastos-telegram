@@ -1,2 +1,1 @@
-worker: python bot_telegram_v4.py
-
+worker: python bot_telegram_railway.py
