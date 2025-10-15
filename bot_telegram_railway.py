@@ -207,11 +207,26 @@ Responda APENAS no formato JSON:
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.3
+        temperature=0.3,
+        response_format={"type": "json_object"}
     )
     
-    resultado = json.loads(response.choices[0].message.content)
-    return resultado
+    try:
+        conteudo = response.choices[0].message.content
+        resultado = json.loads(conteudo)
+        return resultado
+    except json.JSONDecodeError as e:
+        print(f"Erro ao decodificar JSON: {e}")
+        print(f"Conteúdo recebido: {conteudo}")
+        # Retornar estrutura padrão em caso de erro
+        return {
+            "tipo": "gasto",
+            "obra": "Obra Padrão",
+            "descricao": texto[:100],
+            "categoria": "Outros",
+            "valor": "0",
+            "observacoes": "Erro ao processar - verifique manualmente"
+        }
 
 # ========== HANDLERS DO BOT ==========
 
