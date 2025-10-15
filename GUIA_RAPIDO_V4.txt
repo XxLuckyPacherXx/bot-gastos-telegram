@@ -1,0 +1,126 @@
+================================================================================
+⚡ GUIA RÁPIDO - Bot V4.0 na Nuvem
+================================================================================
+
+🎯 RESUMO: 3 Passos Principais
+
+1. Configurar Google Cloud (~15 min)
+2. Deploy no Railway (~10 min)
+3. Testar (~5 min)
+
+================================================================================
+📋 PASSO 1: GOOGLE CLOUD
+================================================================================
+
+1. Acesse: https://console.cloud.google.com/
+2. Criar novo projeto: "bot-gastos-construcao"
+3. Ativar APIs:
+   • Google Sheets API
+   • Google Drive API
+4. Criar Conta de Serviço:
+   • Nome: bot-telegram-gastos
+   • Função: Editor
+5. Gerar chave JSON (vai baixar um arquivo)
+6. Copiar email da conta de serviço
+
+GUARDE:
+• Arquivo JSON baixado
+• Email da conta de serviço
+
+================================================================================
+📋 PASSO 2: RAILWAY
+================================================================================
+
+1. Acesse: https://railway.app/
+2. Login com GitHub
+3. Subir código para GitHub:
+   • Opção A: GitHub Desktop (mais fácil)
+   • Opção B: Git na linha de comando
+4. No Railway: "New Project" → "Deploy from GitHub repo"
+5. Selecionar seu repositório
+6. Configurar variáveis de ambiente:
+   
+   TELEGRAM_BOT_TOKEN = seu_token_do_telegram
+   OPENAI_API_KEY = (já configurada)
+   GOOGLE_CREDENTIALS_JSON = (colar conteúdo do arquivo JSON)
+
+7. Aguardar deploy (2-3 min)
+8. Verificar logs: deve aparecer "Bot iniciado!"
+
+================================================================================
+📋 PASSO 3: TESTAR
+================================================================================
+
+1. Enviar áudio no Telegram: "Comprei cimento por 200 reais para a obra teste"
+2. Bot vai responder com link da planilha
+3. Abrir link (vai dar erro de permissão - normal!)
+4. No Google Drive, procurar "Obra: Teste"
+5. Compartilhar planilha com seu email pessoal
+6. Abrir novamente - agora funciona!
+7. Verificar aba "Gastos" e "Resumo"
+
+================================================================================
+💰 PASSO 4: CONFIGURAR PAGAMENTO
+================================================================================
+
+1. Railway → Account Settings → Billing
+2. Adicionar cartão de crédito
+3. Custo estimado: R$ 20-30/mês
+4. Pode cancelar quando quiser
+
+================================================================================
+🎯 COMANDOS DO BOT
+================================================================================
+
+/start  - Ver boas-vindas
+/obras  - Listar obras (com links!)
+/ajuda  - Ver exemplos
+/status - Ver status do sistema
+
+================================================================================
+💡 DICAS DE USO
+================================================================================
+
+PAGAMENTOS (use estas palavras):
+• "Paguei o pedreiro..."
+• "Pagamento do funcionário..."
+• "Salário do..."
+• "Mão de obra..."
+
+GASTOS:
+• "Comprei..."
+• "Gastei com..."
+• "Materiais..."
+
+================================================================================
+🔧 TROUBLESHOOTING
+================================================================================
+
+Bot não responde:
+→ Verificar logs no Railway
+→ Verificar variáveis de ambiente
+→ Verificar se tem crédito
+
+Erro de permissão na planilha:
+→ Compartilhar planilha com seu email no Google Drive
+
+Atualizar bot:
+→ Commit e push no GitHub
+→ Railway faz deploy automático
+
+================================================================================
+✅ VANTAGENS DA V4.0
+================================================================================
+
+✅ Bot funciona 24h (sem PC ligado)
+✅ Acessa de qualquer lugar (celular, tablet, PC)
+✅ Google Planilhas (backup automático)
+✅ Compartilha com equipe
+✅ Edita em tempo real
+
+================================================================================
+
+📖 Para instruções detalhadas, veja: GUIA_COMPLETO_V4.md
+
+================================================================================
+
